@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/widget/navigationbar.dart';
 
@@ -9,8 +10,11 @@ class OtherScreen extends StatefulWidget {
 }
 
 class _OtherScreenState extends State<OtherScreen> {
+  FirebaseAnalytics analitic = FirebaseAnalytics.instance;
   @override
   Widget build(BuildContext context) {
+    //currenscreen firebase analytics
+    analitic.setCurrentScreen(screenName: 'other_screen');
     return Scaffold(
       appBar: AppBar(
         title: const Text('other event'),
